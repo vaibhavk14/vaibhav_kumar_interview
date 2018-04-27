@@ -23,7 +23,7 @@ public class InterviewBerlinTimeConverter implements TimeConverter {
     	
 	}
 
-	protected String getFirstRowHours(Integer hours) {
+	public String getFirstRowHours(Integer hours) {
 		// TODO Auto-generated method stub
 		String retVal = null ;
 		int statusFirstRow = getFirstRowStatus(hours);
@@ -31,7 +31,7 @@ public class InterviewBerlinTimeConverter implements TimeConverter {
 		return retVal ;
 	}
 
-	protected String getSecondRowHours(Integer hours) {
+	public String getSecondRowHours(Integer hours) {
 		// TODO Auto-generated method stub
 		String retVal = null ;
 		int statusSecondRow = getSecondRowHoursStatus(hours);
@@ -39,14 +39,14 @@ public class InterviewBerlinTimeConverter implements TimeConverter {
 		return retVal ;
 	}
 	
-	protected int getSecondRowHoursStatus(Integer hours) {
+	public int getSecondRowHoursStatus(Integer hours) {
 		// TODO Auto-generated method stub
 		return (hours % 5);
 	}
 
 	
 
-	protected Integer getFirstRowStatus(Integer hours) {
+	public Integer getFirstRowStatus(Integer hours) {
 		// TODO Auto-generated method stub
 		
 		Integer hoursLights = hours - (hours % 5) ;
@@ -54,7 +54,7 @@ public class InterviewBerlinTimeConverter implements TimeConverter {
 	        
 	}
 	
-	protected String getBerlinClockLightsForHours(int numLight, int status) {
+	public String getBerlinClockLightsForHours(int numLight, int status) {
 		String flag = "R" ;
 
         String retVal = "";
@@ -72,7 +72,7 @@ public class InterviewBerlinTimeConverter implements TimeConverter {
 	
 	
 	
-	protected String getSecondRowMinutes(int min) {
+	public String getSecondRowMinutes(int min) {
 		String retVal = null ;
 		int minutes = min % 5 ;
 		retVal = getBerlinClockLightsForMins(4, minutes);
@@ -80,7 +80,7 @@ public class InterviewBerlinTimeConverter implements TimeConverter {
         
     }
 	
-	protected String getBerlinClockLightsForMins(int numLight, int status) {
+	public String getBerlinClockLightsForMins(int numLight, int status) {
 		String flag = "Y" ;
 
         String retVal = "";
@@ -94,14 +94,14 @@ public class InterviewBerlinTimeConverter implements TimeConverter {
         return retVal;
 	}
 	
-	 protected String getFirstRowMinutes(int mins) {
+	 public String getFirstRowMinutes(int mins) {
 		 String retVal = null ;
 		 int minutes = getFirstRowStatus(mins) ;
 		  retVal = getBerlinClockLightsForMins(11, minutes);
 	        return retVal ;
 	    }
 
-	 protected String getBerlinClockLightsForSeconds(int sec) {
+	 public String getBerlinClockLightsForSeconds(int sec) {
 		 String retVal = "O" ;
 		 int seconds = sec % 2 ;
 		 if(seconds == 0) {
